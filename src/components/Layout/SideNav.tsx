@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Menu, Button } from 'antd';
+import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import { FiHome, FiUsers } from 'react-icons/fi';
@@ -10,6 +10,7 @@ import { useLayoutContext } from '../../commons/LayoutContext';
 import { ReactComponent as AppLogo } from '../../assets/images/logo.svg';
 import { ReactComponent as UnknownIcon } from '../../assets/images/unknown.svg';
 import { ReactComponent as UnknownIcon2 } from '../../assets/images/unknown2.svg';
+import { TagListItem } from '../TagListItem';
 
 export function SideNav() {
   const layoutData = useLayoutContext();
@@ -88,6 +89,25 @@ export function SideNav() {
           </Menu.Item>
         </Menu>
       </nav>
+      <section className="tags-menu">
+        <ul className="tags-list">
+          <li className="tags-item">
+            <TagListItem backgroundColor="#23B3E8">PN</TagListItem>
+          </li>
+          <li className="tags-item">
+            <TagListItem backgroundColor="#4DBD98">JI</TagListItem>
+          </li>
+          <li className="tags-item">
+            <TagListItem backgroundColor="#3D43A2">LG</TagListItem>
+          </li>
+          <li className="tags-item">
+            <TagListItem backgroundColor="#F15832">aw</TagListItem>
+          </li>
+          <li className="tags-item">
+            <TagListItem backgroundColor="#004F71">aw</TagListItem>
+          </li>
+        </ul>
+      </section>
       <button className="logout">
         <RiArrowRightSLine />
       </button>
@@ -170,6 +190,29 @@ const StyledSideNav = styled.aside<{ sidebarState: string }>`
   .logo-container {
   }
 
+  .nav-menu {
+    border-bottom: 1px solid #e8e7ea4a;
+    padding: 3em 0em;
+  }
+
+  .tags-menu {
+    border-bottom: 1px solid #e8e7ea4a;
+    padding: 5em 0em;
+
+    .tags-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tags-item {
+      margin-bottom: 1.7em;
+    }
+    .tags-item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .ant-menu-root.ant-menu-vertical,
   .ant-menu-root.ant-menu-vertical-left,
   .ant-menu-root.ant-menu-vertical-right,
@@ -218,7 +261,7 @@ const StyledSideNav = styled.aside<{ sidebarState: string }>`
 
   .logout {
     position: relative;
-    bottom: -36em;
+    bottom: -17em;
     width: 60%;
     display: grid;
     place-items: center;
