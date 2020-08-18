@@ -37,7 +37,7 @@ const StyledMain = styled.main<{ sidebarState: string }>`
 const StyledContent = styled.section`
   background: #e5e5e5;
   padding: 1em 6em 3em 6em;
-  min-height: 92vh;
+  min-height: 100%;
   position: relative;
 
   @media screen and (max-width: 1300px) {
