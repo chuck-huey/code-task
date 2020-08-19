@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface Props extends React.PropsWithChildren<unknown> {
   backgroundColor: string;
+  textColor?: string;
 }
 
 export function TagListItem(props: Props) {
@@ -16,7 +17,7 @@ const StyledSpan = styled.span<Props>`
   height: 22px;
   border-radius: 50%;
   background: ${(props) => props.backgroundColor};
-  color: #ffffff;
+  color: ${(props) => props.textColor || '#fff'};
   font-size: 0.6rem;
   display: flex;
   justify-content: center;
