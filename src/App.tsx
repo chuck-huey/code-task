@@ -5,18 +5,22 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { Layout } from './components/Layout';
 
 const Homepage = lazy(() => import('./pages/Homepage'));
+const TestCases = lazy(() => import('./pages/TestCases'));
 
 function App() {
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <Switch>
-        <Layout>
+    <Layout>
+      <Suspense fallback={<LoadingScreen />}>
+        <Switch>
           <Route exact path="/">
             <Homepage />
           </Route>
-        </Layout>
-      </Switch>
-    </Suspense>
+          <Route exact path="/cases">
+            <TestCases />
+          </Route>
+        </Switch>
+      </Suspense>
+    </Layout>
   );
 }
 
