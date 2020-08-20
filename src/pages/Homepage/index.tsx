@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Input } from 'antd';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 import { Rectangle } from '../../components/Rectangle';
@@ -16,6 +17,9 @@ export default function Home() {
             <BoardTitle>backlog</BoardTitle>
             <div className="plus">
               <Rectangle />
+            </div>
+            <div className="module-input">
+              <Input.TextArea />
             </div>
             <ul className="card-list">
               {new Array(10).fill(0).map((_, index) => (
@@ -91,8 +95,19 @@ const ModulesContent = styled.section`
     margin: 1em 0em;
   }
 
+  .module-input {
+    background: #fff;
+    padding: 1em;
+    border-radius: 7px;
+    margin-bottom: 0.7em;
+
+    textarea.ant-input {
+      border: none;
+    }
+  }
+
   .card-list {
-    height: 52em;
+    height: 43em;
     overflow-y: auto;
   }
 

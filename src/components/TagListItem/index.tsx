@@ -13,15 +13,14 @@ export function TagListItem(props: Props) {
 }
 
 const StyledSpan = styled.span<Props>`
-  width: 22px;
-  height: 22px;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 50%;
   background: ${(props) => props.backgroundColor};
   color: ${(props) => props.textColor || '#fff'};
-  font-size: 0.6rem;
+  font-size: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.4em;
   text-transform: uppercase;
 `;

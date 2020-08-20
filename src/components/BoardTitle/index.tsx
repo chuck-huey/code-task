@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaEllipsisH } from 'react-icons/fa';
 
-interface Props extends React.PropsWithChildren<unknown> {}
+interface Props extends React.PropsWithChildren<unknown> {
+  dots?: boolean;
+}
 
 export function BoardTitle(props: Props) {
   return (
     <StyledTitle>
       <h2 className="children">{props.children}</h2>
-      <FaEllipsisH className="ellipsis" />
+      {!props.dots && <FaEllipsisH className="ellipsis" />}
     </StyledTitle>
   );
 }

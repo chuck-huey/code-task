@@ -14,7 +14,7 @@ export function TabBar(props: Props) {
 
   return (
     <StyledBar>
-      <StyledTabs defaultActiveKey="1" onChange={callback}>
+      <StyledTabs defaultActiveKey="3" onChange={callback}>
         <StyledTabs.TabPane tab="Overview" key="1">
           Content of Tab Pane 1
         </StyledTabs.TabPane>
@@ -32,12 +32,18 @@ export function TabBar(props: Props) {
         </StyledTabs.TabPane>
       </StyledTabs>
       <section className="right-section">
-        <span className="item">All Task</span>
-        <span className="item">
-          <Switch defaultChecked onChange={() => {}} />
-        </span>
-        <span className="item">All Modules</span>
-        <span className="item">Project Deadline: 6 weeks</span>
+        {path === '/' && (
+          <>
+            {' '}
+            <span className="item">All Task</span>
+            <span className="item">
+              <Switch defaultChecked onChange={() => {}} />
+            </span>
+            <span className="item orange">All Modules</span>{' '}
+          </>
+        )}
+
+        <span className="item green">Project Deadline: 6 weeks</span>
       </section>
     </StyledBar>
   );
@@ -46,6 +52,9 @@ export function TabBar(props: Props) {
 const StyledTabs = styled(Tabs)`
   .ant-tabs-nav {
     width: 100%;
+  }
+  .ant-tabs-tab {
+    font-weight: 700;
   }
   .ant-tabs-nav:before {
     border-bottom: 1px solid #a5a4a440;
@@ -59,12 +68,23 @@ const StyledBar = styled.section`
     position: absolute;
     right: 0;
     top: 15px;
+    font-weight: 700;
 
     .item {
       margin-right: 3em;
+
+      .ant-switch-checked {
+        background-color: #f15832;
+      }
     }
     .item:last-child {
       margin-right: 0;
+    }
+    .orange {
+      color: #f15832;
+    }
+    .green {
+      color: #4dbd98;
     }
   }
 `;

@@ -3,6 +3,7 @@ import { BsClock } from 'react-icons/bs';
 import { FaEllipsisH } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { FacePile } from '../FacePile';
 
 import { TagListItem } from '../TagListItem';
 
@@ -17,15 +18,16 @@ export function ModuleCard() {
           </span>
         </div>
         <div className="card-footer">
-          <span className="due-date">
+          <div className="due-date">
             <BsClock />
             <span style={{ marginLeft: '0.4em' }}>due aug 8</span>
-          </span>
-          <span>
+          </div>
+          <div className="footer-right">
+            <FacePile />
             <TagListItem backgroundColor="#E8E7EA" textColor="#A5A4A4">
               +4
             </TagListItem>
-          </span>
+          </div>
         </div>
       </StyledCard>
     </Link>
@@ -64,6 +66,11 @@ const StyledCard = styled.div`
       align-items: center;
       font-size: 0.7rem;
       text-transform: capitalize;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
     }
   }
 `;
