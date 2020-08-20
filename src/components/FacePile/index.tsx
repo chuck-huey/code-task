@@ -5,6 +5,7 @@ import ellipse from '../../assets/images/ellipse.svg';
 import ellipse2 from '../../assets/images/Ellipse.png';
 import ellipse3 from '../../assets/images/Ellipse copy.png';
 
+// This component displays the array of small images
 export function FacePile() {
   return (
     <StyledFaceContainer>

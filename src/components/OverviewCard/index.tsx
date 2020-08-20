@@ -9,6 +9,7 @@ interface Props {
   text: string;
 }
 
+// Displays a card for the overview section
 export function OverviewCard(props: Props) {
   return (
     <StyledRectangle background={props.background}>

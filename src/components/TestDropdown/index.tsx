@@ -2,6 +2,8 @@ import React from 'react';
 import { Select } from 'antd';
 import styled from 'styled-components';
 
+// Displays dropdown for test status.
+// The background changes depending on the current status
 export function TestDropdown() {
   const [background, setBackground] = React.useState('#4dbd98');
 

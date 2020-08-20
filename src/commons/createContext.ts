@@ -1,5 +1,7 @@
 import { createContext, useContext } from 'react';
 
+// Returns context and provider of a particular type
+// Prevents initial value of null for the context
 export function createCtx<ContextType>(): readonly [
   () => ContextType,
   React.Provider<ContextType | undefined>,

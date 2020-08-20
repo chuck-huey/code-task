@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 interface Props extends React.PropsWithChildren<unknown> {}
 
+// Displays the tabs
 export function TabBar(props: Props) {
   const path = useLocation().pathname;
 
