@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Menu } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import { FiHome, FiUsers } from 'react-icons/fi';
 import { RiArrowRightSLine } from 'react-icons/ri';
@@ -30,7 +30,9 @@ export function SideNav() {
           <MdClose />
         </button>
         <div className="logo-container">
-          <AppLogo />
+          <Link to="/">
+            <AppLogo />
+          </Link>
         </div>
       </section>
       <nav className="nav-menu">
