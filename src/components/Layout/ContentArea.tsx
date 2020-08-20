@@ -17,7 +17,7 @@ export function ContentArea(props: React.PropsWithChildren<unknown>) {
 const StyledMain = styled.main<{ sidebarState: string }>`
   flex: 1;
   transition: all 0.5s ease-in-out;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 
   ${({ sidebarState }) =>
@@ -35,8 +35,8 @@ const StyledMain = styled.main<{ sidebarState: string }>`
 `;
 
 const StyledContent = styled.section`
-  background: #e5e5e5;
-  padding: 1em 6em 3em 6em;
+  background: #2d2d2d08;
+  padding: 2.5em 6em 3em 6em;
   min-height: 100%;
   position: relative;
 
