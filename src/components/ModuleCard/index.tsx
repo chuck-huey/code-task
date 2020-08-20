@@ -7,6 +7,7 @@ import { FacePile } from '../FacePile';
 
 import { TagListItem } from '../TagListItem';
 
+// Displays a single module
 export function ModuleCard() {
   return (
     <Link to="/cases">
