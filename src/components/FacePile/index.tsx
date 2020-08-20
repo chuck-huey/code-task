@@ -2,26 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ellipse from '../../assets/images/ellipse.svg';
-import ellipse2 from '../../assets/images/Ellipse copy.svg';
+import ellipse2 from '../../assets/images/Ellipse.png';
+import ellipse3 from '../../assets/images/Ellipse copy.png';
 
 export function FacePile() {
   return (
-    <StyledFaceContainer className="container-circle-3">
+    <StyledFaceContainer>
       <span className="circle red">
         <img src={ellipse} alt="" />
       </span>
       <span className="circle blue">
         <img src={ellipse2} alt="" />
       </span>
-      <span className="circle yellow"></span>
+      <span className="circle yellow">
+        <img src={ellipse3} alt="" />
+      </span>
     </StyledFaceContainer>
   );
 }
 
 const StyledFaceContainer = styled.div`
-  width: 2.5em;
-  height: 1.2em;
+  width: 3em;
   position: relative;
+  display: flex;
+  align-items: center;
 
   .circle {
     width: 1.2em;
@@ -44,7 +48,6 @@ const StyledFaceContainer = styled.div`
   }
 
   .yellow {
-    background: yellow;
     left: 66%;
   }
 `;
