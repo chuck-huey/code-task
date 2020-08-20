@@ -1,32 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Dropdown, Menu } from 'antd';
-import { AiOutlineUser } from 'react-icons/ai';
+import { Button } from 'antd';
 
 import { BoardTitle } from '../../components/BoardTitle';
 import { ModuleCard } from '../../components/ModuleCard';
 import { OverviewCard } from '../../components/OverviewCard';
 import { TabBar } from '../../components/TabBar';
+import { TestDropdown } from '../../components/TestDropdown';
 
 export default function TestCases() {
-  function handleMenuClick(e: any) {
-    console.log('click', e);
-  }
-
-  const menu = (
-    <Menu onClick={handleMenuClick}>
-      <Menu.Item key="1" icon={<AiOutlineUser />}>
-        1st menu item
-      </Menu.Item>
-      <Menu.Item key="2" icon={<AiOutlineUser />}>
-        2nd menu item
-      </Menu.Item>
-      <Menu.Item key="3" icon={<AiOutlineUser />}>
-        3rd menu item
-      </Menu.Item>
-    </Menu>
-  );
-
   return (
     <section>
       <TabBar>
@@ -46,12 +28,10 @@ export default function TestCases() {
             <div className="grid">
               <ul className="test-list">
                 {new Array(10).fill(0).map((_, index) => (
-                  <li>
+                  <li key={index}>
                     <div className="test-listitem">
                       <p>Make the background image blur</p>
-                      <Dropdown className="test-dropdown" overlay={menu}>
-                        <Button>Press</Button>
-                      </Dropdown>
+                      <TestDropdown />
                     </div>
                   </li>
                 ))}
